@@ -1,13 +1,19 @@
 import { Animal } from './animal.model'
+import { Compatible } from './compatible.model'
+import { Care } from './care.model'
+import { Address } from './address.model'
+
 
 export class AnimalAdoption extends Animal {
 
-  compatibles:string // o array?? perros, gatos, niños.
-  care : string // o array?? (tranquilo, muy activo, atención especial)
+  compatible:Compatible; // o array?? perros, gatos, niños.
+  care : Care; // o array?? (tranquilo, muy activo, atención especial)
+  location: Address;
 
-  constructor (obj:object, compatibles:string, care: string){
+  constructor (obj:object, compatible:string, care: string, location: Address){
     super(obj);
-    this.compatibles = compatibles;
+    this.compatible = compatible;
     this.care = care;
+    this.location = location;
   }
 }

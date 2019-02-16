@@ -1,4 +1,5 @@
 import { Animal } from './animal.model'
+import { Address } from './address.model'
 
 export class AnimalLost extends Animal {
 
@@ -7,10 +8,10 @@ datePublished: Date;
 areaLost: Address;
 
 
-  constructor (dateLost, datePublished, care: string){
+  constructor (dateLost, datePublished, care: string, areaLost: string){
     super(obj);
-    this.dateLost: Date = dateLost;
-    this.datePublished: Date = datePublished;
-    this.areaLost: Address = areaLost;
+    this.dateLost = dateLost;
+    this.datePublished = datePublished;
+    this.areaLost = areaLost;
   }
 }
