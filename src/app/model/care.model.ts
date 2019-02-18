@@ -1,7 +1,8 @@
 
 export class Care {
-  name:string;//(energetic , quiet, special care)
-  constructor(name: string){
+
+  name:string;
+  constructor(name){
     this.name = name;
   }
 }
