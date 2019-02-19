@@ -26,10 +26,32 @@ import { OwnerDetailComponent } from './owner-detail/owner-detail.component';
 const appRoutes: Routes = [
   // OJO: creé un ejemplo para home pero todav. no tengo el componente home:
 {path: "home", component: HomeComponent},
+{path: "signup", component: SignupComponent},
+{path: "login", component: LoginComponent},
+{path: "my-animals", component: OwnerAnimalListComponent},
+{path: "new-animal", component: RegisterAnimalComponent},
+{path: "new-adoption", component: RegisterAnimalAdoptionComponent},
+{path: "new-lost", component: RegisterAnimalLostComponent},
+{path: "new-found", component: RegisterAnimalFoundComponent},
+{path: "place-comments", component: PlaceCommentsComponent},
+{path: "place-detail", component: PlaceDetailsComponent},
+{path: "places-list", component: PlaceslistComponent},
+{path: "map", component: MapComponent},
+{path: "new-place", component: PlaceRegisterComponent},
+{path: "adoption-list", component: AnimalsAdoptionListComponent},
+{path: "found-list", component: AnimalsFoundListComponent},
+{path: "lost-list", component: AnimalsLostListComponent},
+{path: "adoption-detail", component: AnimalAdoptionDetailComponent},
+{path: "owner-detail", component: OwnerDetailComponent},
+
+//Las siguientes deben ser las ultimas y en este orden:
 //a continuación el componente que veré si no hay extension de la url:
 {path: "", component: HomeComponent},
 //a continuación debería estar el componente de error 404:
 {path: "**", component: HomeComponent},
+
+
+
 
 
 ]

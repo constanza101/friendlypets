@@ -8,7 +8,7 @@ datePublished: Date;
 areaLost: Address;
 
 
-  constructor (dateLost, datePublished, care: string, areaLost: string){
+  constructor (obj, dateLost, datePublished, care: string, areaLost: Address){
     super(obj);
     this.dateLost = dateLost;
     this.datePublished = datePublished;

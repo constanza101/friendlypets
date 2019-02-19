@@ -8,7 +8,7 @@ datePublished: Date;
 areaFound: Address;
 
 
-  constructor (dateFound, datePublished, care: string, areaFound:string){
+  constructor (obj, dateFound, datePublished, care: string, areaFound:Address){
     super(obj);
     this.dateFound = dateFound;
     this.datePublished = datePublished;
