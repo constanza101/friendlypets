@@ -22,6 +22,7 @@ import { AnimalsFoundListComponent } from './animals-found-list/animals-found-li
 import { AnimalsLostListComponent } from './animals-lost-list/animals-lost-list.component';
 import { AnimalAdoptionDetailComponent } from './animal-adoption-detail/animal-adoption-detail.component';
 import { OwnerDetailComponent } from './owner-detail/owner-detail.component';
+import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 
 const appRoutes: Routes = [
   // OJO: creé un ejemplo para home pero todav. no tengo el componente home:
@@ -77,7 +78,7 @@ const appRoutes: Routes = [
     AnimalsFoundListComponent, //listado de animales encontrados ordenados por distancia.
     AnimalsLostListComponent, //listado de animales perdidos ordenados x distancia
     AnimalAdoptionDetailComponent,//detalle del animal en adopción, tendrá adentro un componente de ContactFormComponent
-    OwnerDetailComponent // detalle de dueño, dentro un ContactFormComponent y un OwnerAnimalListComponent
+    OwnerDetailComponent, TermsConditionsComponent // detalle de dueño, dentro un ContactFormComponent y un OwnerAnimalListComponent
 
   ],
   imports: [
