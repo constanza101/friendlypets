@@ -38,7 +38,14 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+secret.json
 
 # System Files
 .DS_Store
 Thumbs.db
+
+src/app/home/homeFEATURETTES.component.html
+src/app/login/login2.component.scss
+src/app/signup/signup2.component.html
+src/app/signup/signup2.component.scss
+src/assets/images/

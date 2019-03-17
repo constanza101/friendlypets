@@ -23,8 +23,15 @@ import { AnimalsLostListComponent } from './animals-lost-list/animals-lost-list.
 import { AnimalAdoptionDetailComponent } from './animal-adoption-detail/animal-adoption-detail.component';
 import { OwnerDetailComponent } from './owner-detail/owner-detail.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { AuthService } from './services/auth.service';
+import {AuthGuard} from './auth.guard'
+
 
 const appRoutes: Routes = [
+  //, canActivate: [AuthGuard]
+
   // OJO: creé un ejemplo para home pero todav. no tengo el componente home:
 {path: "home", component: HomeComponent},
 {path: "signup", component: SignupComponent},
@@ -47,9 +54,9 @@ const appRoutes: Routes = [
 
 //Las siguientes deben ser las ultimas y en este orden:
 //a continuación el componente que veré si no hay extension de la url:
-{path: "", component: HomeComponent},
+          //{path: "", component: HomeComponent},
 //a continuación debería estar el componente de error 404:
-{path: "**", component: HomeComponent},
+            //{path: "**", component: HomeComponent},
 
 
 
@@ -78,14 +85,14 @@ const appRoutes: Routes = [
     AnimalsFoundListComponent, //listado de animales encontrados ordenados por distancia.
     AnimalsLostListComponent, //listado de animales perdidos ordenados x distancia
     AnimalAdoptionDetailComponent,//detalle del animal en adopción, tendrá adentro un componente de ContactFormComponent
-    OwnerDetailComponent, TermsConditionsComponent // detalle de dueño, dentro un ContactFormComponent y un OwnerAnimalListComponent
+    OwnerDetailComponent, TermsConditionsComponent, HeaderComponent, FooterComponent // detalle de dueño, dentro un ContactFormComponent y un OwnerAnimalListComponent
 
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,50 +1,37 @@
+<div id="contenedor" class="container-fluid">
+  <div id="row100vh" class="row no-gutter min-vh-100">
+    <div class="col-sm-12 col-md-12 col-lg-6 bg-image"></div>
+    <div id="allignSelfCenter" class="align-self-center col-sm-12 col-md-12 col-lg-6 ">
+      <div class="login d-flex align-items-center py-sm-0 py-md-2 py-xl-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h4 class="login-heading mb-4 text-center">Nos alegra verte de nuevo! </h4>
+              <form>
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <label for="inputEmail">Email </label>
+                </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <label for="inputPassword">Contraseña</label>
+                </div>
 
-
-      <div class="container2">
-        <div class="message signup">
-          <div class="btn-wrapper">
-            <button class="button" id="signup">SignUp</button>
-            <button class="button" id="login"> Login</button>
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Rcordar contrseña</label>
+                </div>
+              </form>
+              <button (click)="_auth.login()" class="btn btn-lg btn-info btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Entrar</button>
+              <button (click)="_auth.goToSignup()" class="btn btn-lg btn-secondary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Quiero unirme</button>
+              <div class="text-center">
+                <a class="small" href="#">Olvidaste tu contraseña?</a>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="form form--signup">
-          <div class="form--heading">Welcome! Sign Up</div>
-          <form autocomplete="off">
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <button class="button">Sign Up</button>
-          </form>
-        </div>
-        <div class="form form--login">
-          <div class="form--heading">Welcome back! </div>
-          <form autocomplete="off">
-            <input type="text" placeholder="Name">
-            <input type="password" placeholder="Password">
-            <button class="button">Login</button>
-          </form>
-        </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-    </div>
-    <div class="col-sm">
-      One of three columns
     </div>
   </div>
 </div>

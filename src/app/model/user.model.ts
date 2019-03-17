@@ -9,7 +9,7 @@ export class User {
   address: Address;
   registeredAnimals: Animal [ ];
 
-  constructor(name){
-    this.name = name;
+  constructor(obj){
+    this.name = obj.name;
   }
 }
