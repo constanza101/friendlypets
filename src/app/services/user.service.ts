@@ -7,25 +7,49 @@ export class UserService {
   userName: string;
   userAddressId: number;
   userCity: string;
+  userJoinedDay: number;
+  userJoinedMonth: number;
+  userJoinedYear: number;
+  userEmail: string;
+  userPets: [];
 
 
   constructor() { }
+
+
 
   getUserDetails(id){
     var urlUser = "http://localhost:8000/user/"+id
     $.get(urlUser, (response) => {
         this.userName = response[0].name;
         this.userAddressId = response[0].address_id;
+        this.userEmail = response[0].email;
+        console.log(this.userEmail);
+//get date:
+        var creation_date = response[0].creation_date;
+        var myDate = new Date(creation_date);
+        this.userJoinedDay = myDate.getDate();
+        this.userJoinedMonth = myDate.getMonth()+1;
+        this.userJoinedYear = myDate.getFullYear();
+
+
         var urlAddress = "http://localhost:8000/address/"+this.userAddressId
         $.get(urlAddress, (response) => {
             var city_id = response[0].city_id
             var urlCity = "http://localhost:8000/city/"+city_id
             $.get(urlCity, (response) => {
-              console.log(response[0].name);
               this.userCity = response[0].name;
-              //  var city_id = response[0].city_id
-            })
-        })
-    });
-  }
+            })//$.get(urlCity)
+        })//$.get (urlAddress)
+    });//$.get(urlUser)
+    var urlMyPets = "http://localhost:8000/animals/"+id
+
+    $.get(urlMyPets, (response) => {
+        console.log(response)
+        this.userPets = response;
+
+        console.log()
+        console.log()
+        })//$.get(urlMyPets)
+  }//getUserDetails(id)
 }

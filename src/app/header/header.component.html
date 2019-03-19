@@ -1,6 +1,6 @@
 <header class="container">
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand ml-3" href="#">#FriendlyDogs</a>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-light">
+    <button class="btn btn-outline-dark" (click)="_auth.goToHome()" type="button" name="button"><i class="fas fa-home"></i></button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,30 +22,39 @@
       </ul>
 
 
-      <button *ngIf="!_auth.isLogged()" (click)="_auth.goToLogin()" type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button *ngIf="!_auth.isLogged()" (click)="_auth.goToLogin()" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-sign-in-alt"></i>
         Log in
        </button>
 
       <div *ngIf="_auth.isLogged()" class="btn-group">
+         <button (click)="_auth.goToMyProfile()" class="dropdown-item" type="button">
+           <i class="fas fa-user"></i>
+           My Profile
+         </button>
 
-         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown" aria-haspopup="true"
-           aria-expanded="false">
-           <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="avatar rounded-circle z-depth-0 " alt="avatar image">
-         </a>
-        <div class="dropdown-menu dropdown-menu-right text-right">
-          <button class="dropdown-item" type="button">My Profile</button>
-          <button class="dropdown-item" type="button">My Pets</button>
-          <button class="dropdown-item" type="button">My favourite places</button>
-          <div class="dropdown-divider"></div>
+         <button class="dropdown-item" type="button">
+            <i class="fas fa-heart"></i>
+           Places
+         </button>
 
-          <button (click)="_auth.logOut()" class="dropdown-item" type="button">
-            Log out
-            <i class="fas fa-sign-out-alt"></i>
-          </button>
-        </div>
+           <button class="dropdown-item" type="button">
+             <i class="fas fa-users"></i>
+             Friends
+           </button>
+
+
+         <button (click)="_auth.logOut()" class="dropdown-item" type="button">
+           Log out
+           <i class="fas fa-sign-out-alt"></i>
+         </button>
+
       </div>
 
     </div>
   </nav>
+
+
+
+
 </header>

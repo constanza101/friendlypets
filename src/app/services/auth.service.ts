@@ -57,6 +57,9 @@ goToHome(){
   this._myRoute.navigate(["home"]); //<-- redirigir a otra página
 }
 
+goToMyProfile(){
+  this._myRoute.navigate(["myprofile"]); //<-- redirigir a otra página
+}
 registerUser(name, email, password){
   var data = {"name":name,"email":email,"password": password, "address_id": 1};
   var url = "http://localhost:8000/user"

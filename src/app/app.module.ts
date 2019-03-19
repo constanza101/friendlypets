@@ -50,7 +50,7 @@ const appRoutes: Routes = [
 {path: "found-list", component: AnimalsFoundListComponent},
 {path: "lost-list", component: AnimalsLostListComponent},
 {path: "adoption-detail", component: AnimalAdoptionDetailComponent},
-{path: "profile", component: OwnerDetailComponent},
+{path: "myprofile", component: OwnerDetailComponent},
 
 //Las siguientes deben ser las ultimas y en este orden:
 //a continuación el componente que veré si no hay extension de la url:

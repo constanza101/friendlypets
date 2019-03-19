@@ -1368,7 +1368,7 @@ body{margin-top:20px;}
 .main-row-container{
   border: 1px solid #CCC;
   background-color: #FFF;
-  padding: 50px;
+  padding: 10px 50px 10px 50px;
   display: inline-block;
   max-width: 100%;
   -webkit-box-sizing: border-box;
@@ -1376,4 +1376,12 @@ body{margin-top:20px;}
   box-sizing: border-box;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, .15);
   margin-top: 80px;
+}
+
+.social-row{
+  //display: flex;
+}
+
+.myPets{
+  overflow:hidden;
 }
