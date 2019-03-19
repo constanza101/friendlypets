@@ -1,16 +1,120 @@
+<!--Profile plantilla-->
+<!--https://codepen.io/jasondavis/pen/vyMJPp?editors=1111-->
 
-<div class="container">
+<app-header>
+
+</app-header>
+
+<div class="container contenedor">
+<div class="main-row-container ">
+  <h4 class="text-info text-center profile-activity py-2 ">
+    <span class="middle">{{ _user.userName }}</span>
+    <br>
+  </h4>
   <div class="row">
-    <div class="col-sm">
-      One of three columns
+    <div id="user-profile-2" class="user-profile">
+        <div class="tabbable">
+          <div class="tab-content no-border padding-24 py-2">
+            <div id="home" class="tab-pane in active">
+              <div class="row">
+                <div class="col-xs-12 col-sm-3 center">
+                  <span class="profile-picture">
+                    <img class="editable mw-100 img-responsive" alt="Avatar" id="avatar2" src="https://barkpost.com/wp-content/uploads/2015/07/dog-kisses.png">
+                  </span>
+
+
+                  <div class="space space-4 my-2"></div>
+
+                  <a href="#" class="btn btn-sm btn-block btn-info">
+                    <i class="ace-icon fa fa-envelope-o bigger-110"></i>
+                    <span class="bigger-110">Send a message</span>
+                  </a>
+                </div><!-- /.col -->
+
+                <div class="col-xs-12 col-sm-9">
+                  <div class="profile-user-info">
+
+
+                    <div class="profile-info-row">
+                      <div class="profile-info-name"> Location </div>
+
+                      <div class="profile-info-value">
+                        <i class="fa fa-map-marker light-orange bigger-110"></i>
+                        <span class="ml-2">{{_user.userCity}}</span>
+                        <span>España</span>
+                      </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                      <div class="profile-info-name"> Joined </div>
+
+                      <div class="profile-info-value">
+                        <span>2010/06/20</span>
+                      </div>
+                    </div>
+
+
+                  </div>
+
+                  <div class="hr hr-8 dotted"></div>
+
+                </div><!-- /.col -->
+              </div><!-- /.row -->
+
+              <div class="space-20"></div>
+
+
+<div class="profile-feed row my-2">
+  <div class="col-sm-12 text-info text-center profile-activity">
+<h4>Mis mascotas</h4>
+  </div>
+  <div class="col-sm-12">
+    <div class="profile-activity ">
+      <div>
+        <img class="pull-left" alt="My pet avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbZoZvX-HlrkrrO4jgqWxmFiqIjd6brFXK1UhqdHPkhs7kaWf3">
+        <a class="user mr-2 text-danger" href="#"> Firulais </a>
+          Macho - en adopción - Es tranquilo y está castrado.
+        <a class="text-info" href="#">ver más</a>
+      </div>
     </div>
-    <div class="col-sm">
-      <p>
-        owner-detail works!
-      </p>
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
+  </div><!-- /.col -->
+
+
+</div><!-- /.row -->
+
+<div class="row">
+  <div class="">
+
   </div>
 </div>
+
+<div class="social-row row">
+<div class="col social-col ">
+  <a href="#"><img src="/assets/icons/facebook-50.png" alt=""></a>
+</div>
+<div class="col social-col ">
+  <a href="#"><img src="/assets/icons/instagram-50.png" alt=""></a>
+</div>
+<div class="col social-col ">
+  <a href="#"><img src="/assets/icons/twitter-50.png" alt=""></a>
+</div>
+</div>
+
+
+
+
+            </div><!-- /#home -->
+
+
+
+
+          </div>
+        </div><!--tabbable-->
+
+      </div> <!--user-profile-2-->
+  </div> <!--Main row-->
+</div>
+</div>
+
+<app-footer>
+</app-footer>

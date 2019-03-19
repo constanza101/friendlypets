@@ -15,7 +15,6 @@ export class SignupComponent implements OnInit {
   constructor(public _auth:AuthService, public _router: Router) { }
 
   ngOnInit() {
-    console.log($('div'))
   }
 
 
@@ -32,16 +31,10 @@ export class SignupComponent implements OnInit {
     alert("Passwords Don't Match");
     return false;
   } else if  (password === repeatPassword){
-    console.log("passwords match!");
-  };
+    alert("passwords match!");
 
-  var url = "http://localhost:8000/user"
+    this._auth.registerUser(name, email, password);
 
-    $.post(url, data, function(response) {
-        console.log(response);
-
-
-
-    });
-  }
-}
+  }; //else if passwords match
+  }//saveNewUser()
+}//SignupComponent

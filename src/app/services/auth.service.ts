@@ -10,26 +10,25 @@ export class AuthService {
 
   isLogged(){
     var isLogged = localStorage.getItem("userlogged");
-    console.log(isLogged);
+  //  console.log(isLogged);
     if (isLogged != null ){
-        console.log("loggedIn = true")
+  //      console.log("loggedIn = true")
         return true;
     }else if (isLogged == null ){
-      console.log("loggedIn = false")
+  //    console.log("loggedIn = false")
       return false;
     }
   }
 
-  login(){
-  var email = $('#inputEmail').val();
-  var password = $('#inputPassword').val();
-  var data = {"name":name,"email":email,"password": password};
+  login(email, password){
+  var data = {"email":email,"password": password};
   var url = "http://localhost:8000/userlogin"
+  console.log(data)
+
     $.post(url, data, (response) => {
         var id = response[0]["id"];
         var password = response[0]["password"];
         var user = id+"/"+password;
-
         if (response == "wrongEmail"){
           return alert("email incorrecto")
         }else if(response == "wrongPass"){
@@ -56,6 +55,20 @@ goToSignup(){
 
 goToHome(){
   this._myRoute.navigate(["home"]); //<-- redirigir a otra página
+}
+
+registerUser(name, email, password){
+  var data = {"name":name,"email":email,"password": password, "address_id": 1};
+  var url = "http://localhost:8000/user"
+  console.log("registrando usuario")
+  console.log(name, email, password )
+  $.post(url, data, (response) => {
+      console.log(response);
+      alert("se ha guardado un nuevo usuario");
+ console.log(email, password);
+      this.login(email, password);
+
+    });//post user
 }
 
 }

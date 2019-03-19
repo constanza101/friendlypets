@@ -15,6 +15,13 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  logInForm(){
+    var email = $('#inputEmail').val();
+    var password = $('#inputPassword').val();
+    this._auth.login(email, password)
+
+  }
+
 
 
 }
