@@ -26,7 +26,9 @@ import { TermsConditionsComponent } from './terms-conditions/terms-conditions.co
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './services/auth.service';
-import {AuthGuard} from './auth.guard'
+import {AuthGuard} from './auth.guard';
+import { UserComponent } from './user/user.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component'
 
 
 const appRoutes: Routes = [
@@ -51,6 +53,12 @@ const appRoutes: Routes = [
 {path: "lost-list", component: AnimalsLostListComponent},
 {path: "adoption-detail", component: AnimalAdoptionDetailComponent},
 {path: "myprofile", component: OwnerDetailComponent},
+{path: "profile/:user_id", component: UserComponent},
+{path: "edit-profile", component: EditProfileComponent},
+
+
+
+
 
 //Las siguientes deben ser las ultimas y en este orden:
 //a continuación el componente que veré si no hay extension de la url:
@@ -85,7 +93,12 @@ const appRoutes: Routes = [
     AnimalsFoundListComponent, //listado de animales encontrados ordenados por distancia.
     AnimalsLostListComponent, //listado de animales perdidos ordenados x distancia
     AnimalAdoptionDetailComponent,//detalle del animal en adopción, tendrá adentro un componente de ContactFormComponent
-    OwnerDetailComponent, TermsConditionsComponent, HeaderComponent, FooterComponent // detalle de dueño, dentro un ContactFormComponent y un OwnerAnimalListComponent
+    OwnerDetailComponent,     // detalle de dueño, dentro un ContactFormComponent y un OwnerAnimalListComponent
+    TermsConditionsComponent,
+    HeaderComponent,
+    FooterComponent,
+    UserComponent,
+    EditProfileComponent
 
   ],
   imports: [

@@ -26,7 +26,7 @@
                   <div class="space space-4 my-2"></div>
                   <a href="mailto:{{_user.userEmail}}" class="btn btn-sm btn-block btn-info">
                     <i class="ace-icon fa fa-envelope-o bigger-110"></i>
-                    <span class="bigger-110"> Editar perfil </span>
+                    <span class="bigger-110">Enviar mensaje</span>
                   </a>
                 </div><!-- /.col -->
 
@@ -62,12 +62,12 @@
 
               <div class="space-20"></div>
 
+              <div class="row">
+                <div class="col-sm-12 text-info text-center profile-activity">
+                    <h4>Mis mascotas</h4>
+                </div>
+              </div>
 
-<div class="row">
-  <div class="col-sm-12 text-info text-center profile-activity">
-      <h4>Mis mascotas</h4>
-  </div>
-</div>
 <div class="profile-feed row my-2 myPets">
 
   <div class=" col-sm-12" *ngFor="let pet of _user.userPets">

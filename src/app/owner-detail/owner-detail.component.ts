@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../model/user.model';
 import { UserService } from '../services/user.service';
 import { Router} from '@angular/router';
 
@@ -13,9 +12,7 @@ import { Router} from '@angular/router';
 
 export class OwnerDetailComponent implements OnInit {
 
-  constructor(public _user:UserService, public _router: Router) {
-
-  }
+  constructor(public _user:UserService, public _router: Router) {}
 
 
 

@@ -1,0 +1,153 @@
+<div id="contenedor" class="container-fluid">
+  <h2 class="text-center text-info mt-2">Editar perfil</h2>
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+          <h6>Cambiar foto de perfil</h6>
+
+          <input type="file" class="form-control ">
+        </div>
+      </div>
+
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+
+        <h3 class="text-left text-secondary">Información personal</h3>
+
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Nombre</label>
+            <div class="col-lg-8">
+              <input id="inputName" class="form-control" type="text" value="">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input id="inputEmail"class="form-control" type="email" value="">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 control-label">Cambiar contraseña:</label>
+            <div class="col-md-8">
+              <input id="inputPassword"class="form-control" type="password" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="inputRepeatPassword" class="col-md-3 control-label">Confirmar nueva contrasesña:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 control-label">Dirección</label>
+            <div class="col-md-8">
+              <input id="inputStreet" class="form-control" type="text" value="">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 control-label">Ciudad</label>
+            <div class="col-md-8">
+              <input id="inputCity" class="form-control" type="text" value="">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 control-label">Código postal</label>
+            <div class="col-md-8">
+              <input id="inputPostalCode" class="form-control" type="text" value="">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input (click)="newData()" type="button" class="btn btn-info" value="Guardar cambios">
+              <span></span>
+              <input type="reset" class="btn btn-default" value="Cancel">
+            </div>
+          </div>
+        </form>
+
+<hr>
+    <h3 class="text-left text-secondary">Mascotas</h3>
+<hr>
+
+
+
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label class="col-lg-3 control-label">Nombre</label>
+    <div class="col-lg-8">
+      <input id="inputPetName" class="form-control" type="text" value="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-lg-3 control-label">tamaño</label>
+    <div class="col-lg-8">
+      <input id="inputSize"class="form-control" type="email" value="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-3 control-label">status</label>
+    <div class="col-md-8">
+      <input id="inputStatus"class="form-control" type="select" value="">
+    </div>
+  </div>
+  <div class="form-group">
+    <label id="input" class="col-md-3 control-label">Confirmar nueva contrasesña:</label>
+    <div class="col-md-8">
+      <input class="form-control" type="password" value="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-3 control-label">Dirección</label>
+    <div class="col-md-8">
+      <input class="form-control" type="text" value="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-3 control-label">Ciudad</label>
+    <div class="col-md-8">
+      <input  class="form-control" type="text" value="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-3 control-label">Código postal</label>
+    <div class="col-md-8">
+      <input  class="form-control" type="text" value="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-3 control-label"></label>
+    <div class="col-md-8">
+      <input type="button" class="btn btn-info" value="Save Changes">
+      <span></span>
+      <input type="reset" class="btn btn-default" value="Cancel">
+    </div>
+  </div>
+</form>
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+<hr>
