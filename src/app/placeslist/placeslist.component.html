@@ -1,16 +1,119 @@
+<app-header></app-header>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      One of three columns
+<div id="contenedor" class="container-fluid">
+  <div id="row100vh" class=" row no-gutter">
+
+<!--Mapa-->
+    <div class="col-sm-12 col-md-12 col-lg-8 bg-image">
+        <agm-map
+          [zoom]="12"
+          [latitude]="myPosition.lat"
+          [longitude]="myPosition.lng"
+          (mapClick)="handleClick($event)"
+        >
+          <agm-marker
+            *ngFor="let marker of markers"
+            [latitude]="marker.latitude"
+            [longitude]="marker.longitude"
+            [label]="{
+              color:'red',
+              fontFamily: '',
+              fontSize: '14px',
+              fontWeight: 'bold',
+              text: marker.name
+            }"
+            [iconUrl]="{
+              url: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIj48Zz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MDAgNjAwKSBzY2FsZSgwLjY5IDAuNjkpIHJvdGF0ZSgwKSB0cmFuc2xhdGUoLTYwMCAtNjAwKSIgc3R5bGU9ImZpbGw6I0IzMDA4MyI+PHN2ZyBmaWxsPSIjQjMwMDgzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGRhdGEtbmFtZT0iTGF5ZXIgMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHg9IjBweCIgeT0iMHB4Ij48dGl0bGU+UGV0SWNvbnM8L3RpdGxlPjxnPjxwYXRoIGQ9Ik01Ni40Myw3OS43MmwtMy41MS0xLjEzQTEwMi44NiwxMDIuODYsMCwwLDAsMzYsNzQuMjVhMTMuNTcsMTMuNTcsMCwwLDEtNS40OC0yLjIsOS4xMyw5LjEzLDAsMCwxLTQuMzgtOC4yMWMuMDctMy44MSwyLjQ5LTguMTMsNy05LjIyczguMTEtMy42OSwxMS40Mi02Ljc5YTE1LjQyLDE1LjQyLDAsMCwxLDQtMyw2LjI3LDYuMjcsMCwwLDEsNy4wOSwxQTEyLjkyLDEyLjkyLDAsMCwxLDU4LjQzLDUwYy44NywyLjEzLDEuNzQsNC4yNywyLjYzLDYuNGE0NC42OSw0NC42OSwwLDAsMCw1LDguNDEsMTEuMTMsMTEuMTMsMCwwLDEsMiw3LjQ2QTgsOCwwLDAsMSw2MSw3OS42NmExNS4xNiwxNS4xNiwwLDAsMS0yLjEzLjE2QzU4LjE0LDc5LjgzLDU3LjQzLDc5Ljc3LDU2LjQzLDc5LjcyWiI+PC9wYXRoPjwvZz48ZWxsaXBzZSBjeD0iNDUuOTUiIGN5PSIzMC44NCIgcng9IjEwLjY4IiByeT0iNy43MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEuOTggNzQuNTMpIHJvdGF0ZSgtODYpIj48L2VsbGlwc2U+PGVsbGlwc2UgY3g9IjI5LjMyIiBjeT0iNDMuMTkiIHJ4PSI3LjExIiByeT0iOS44MiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEuMzIgMC45Mykgcm90YXRlKC0xLjc3KSI+PC9lbGxpcHNlPjxlbGxpcHNlIGN4PSI2Ni4yMyIgY3k9IjM1LjcyIiByeD0iMTAuNjgiIHJ5PSI3LjczIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1LjA3IDc5LjU1KSByb3RhdGUoLTYzLjk3KSI+PC9lbGxpcHNlPjxlbGxpcHNlIGN4PSI3NC40OCIgY3k9IjU0LjcxIiByeD0iOS44MiIgcnk9IjcuMTEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMS4yMiA4OS4zMikgcm90YXRlKC01OC4yOSkiPjwvZWxsaXBzZT48L3N2Zz48L2c+PC9nPjwvc3ZnPg==',
+              scaledSize: {width: 100, height: 100},
+              labelOrigin: {x:50, y:10}
+            }"
+          >
+            <agm-info-window
+              [isOpen]="false"
+              [disableAutoPan]="false"
+              [maxWidth]="100"
+            >
+              <p>{{marker.name}}</p>
+              <p>{{marker.description}}</p>
+              <button>Modificar</button>
+              <button>Borrar</button>
+            </agm-info-window>
+          </agm-marker>
+        </agm-map>
     </div>
-    <div class="col-sm">
-      <p>
-        place-list works!
-      </p>
+
+    <div [ngClass]="isMobile ? 'mob-container' : 'desk-container'" id="allignSelfCenter" class="align-self-center col-sm-12 col-md-12 col-lg-4 ">
+      <div class="login d-flex align-items-center py-sm-0 py-md-2 py-xl-5">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-9 col-lg-12 mx-auto">
+              <h4 class="login-heading  my-4 text-info text-center"> FriendlyDogs bienvenidos </h4>
+
+              <div class="profile-feed row my-2 myPlaces">
+                <div class=" col-sm-12" *ngFor="let marker of markers">
+                  <div class="profile-activity border my-2 border-info">
+
+                    <div class="row my-2  d-flex justify-content-center">
+                      <div class="col col-4 col-xs-6">
+                        <img class="pull-left placeImg" alt="My pet avatar" src="http://mysmalldog.com/wp-content/uploads/2017/02/The-Brew-Project-Dog-Friendly-Restaurants-in-San-Diego-1024x768.jpg">
+                      </div>
+                      <div class="col col-8 col-xs-6">
+                        <a class="user mr-2 text-danger" href="#">{{marker.name}}</a>
+                        <p>{{marker.description}}</p>
+                        <a class="text-info" href="#">ver más</a>
+                      </div>
+                    </div>
+
+                  </div>
+                </div><!-- /.col -->
+              </div><!-- /.row -->
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-sm">
-      One of three columns
+  </div>
+  <app-footer></app-footer>
+
+</div>
+
+
+<!-- MODAL -->
+<div id="addPlaceModal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button (click)="closeModal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="col-md-3 control-label">Nombre</label>
+          <div class="col-md-12">
+            <input id="inputName" class="form-control" type="text" value="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Descripcion</label>
+          <div class="col-md-12">
+            <input id="inputDescription" class="form-control" type="text" value="">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button (click)="addPlace()" type="button" class="btn btn-primary">Save changes</button>
+        <button (click)="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>
+
+<!--Modal background black -->
+<div id="background-modal" style="display:none" class="modal-backdrop fade show"></div>

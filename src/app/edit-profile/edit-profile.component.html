@@ -77,12 +77,26 @@
         </form>
 
 <hr>
-    <h3 class="text-left text-secondary">Mascotas</h3>
+    <h3 class="text-left text-secondary">Añadir mascotas</h3>
 <hr>
 
 
 
 <form class="form-horizontal" role="form">
+
+
+    <div class="form-group">
+      <label class="col-lg-3 control-label">Especie</label>
+      <div class="col-lg-8">
+        <select id="inputType">
+          <option value="1">Perro</option>
+          <option value="2">Gato</option>
+        </select>
+      </div>
+    </div>
+
+
+
   <div class="form-group">
     <label class="col-lg-3 control-label">Nombre</label>
     <div class="col-lg-8">
@@ -91,50 +105,50 @@
   </div>
 
   <div class="form-group">
-    <label class="col-lg-3 control-label">tamaño</label>
+    <label class="col-lg-3 control-label">Fecha de nacimiento</label>
     <div class="col-lg-8">
-      <input id="inputSize"class="form-control" type="email" value="">
+      <input id="inputBirthDate" class="form-control" type="date" value="">
     </div>
   </div>
 
   <div class="form-group">
-    <label class="col-md-3 control-label">status</label>
-    <div class="col-md-8">
-      <input id="inputStatus"class="form-control" type="select" value="">
-    </div>
-  </div>
-  <div class="form-group">
-    <label id="input" class="col-md-3 control-label">Confirmar nueva contrasesña:</label>
-    <div class="col-md-8">
-      <input class="form-control" type="password" value="">
+    <label class="col-lg-3 control-label">Género</label>
+    <div class="col-lg-8">
+      <select id="inputGender">
+        <option value="F">Hembra</option>
+        <option value="M">Macho</option>
+      </select>
     </div>
   </div>
 
   <div class="form-group">
-    <label class="col-md-3 control-label">Dirección</label>
-    <div class="col-md-8">
-      <input class="form-control" type="text" value="">
+    <label class="col-lg-3 control-label">Tamaño</label>
+    <div class="col-lg-8">
+      <select id="inputSize">
+        <option value="small">Pequeño</option>
+        <option value="medium">Mediano</option>
+        <option value="large">Grande</option>
+        <option value="xl">Gigante</option>
+      </select>
     </div>
   </div>
 
+
+
+
+
   <div class="form-group">
-    <label class="col-md-3 control-label">Ciudad</label>
-    <div class="col-md-8">
-      <input  class="form-control" type="text" value="">
+    <label class="col-lg-3 control-label">Descripción</label>
+    <div class="col-lg-8">
+      <input id="inputPetDescription"class="form-control" type="email" value="">
     </div>
   </div>
 
-  <div class="form-group">
-    <label class="col-md-3 control-label">Código postal</label>
-    <div class="col-md-8">
-      <input  class="form-control" type="text" value="">
-    </div>
-  </div>
 
   <div class="form-group">
     <label class="col-md-3 control-label"></label>
     <div class="col-md-8">
-      <input type="button" class="btn btn-info" value="Save Changes">
+      <input (click)="newAnimal()" type="button" class="btn btn-info" value="Save Changes">
       <span></span>
       <input type="reset" class="btn btn-default" value="Cancel">
     </div>

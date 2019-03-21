@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -29,6 +30,7 @@ import { AuthService } from './services/auth.service';
 import {AuthGuard} from './auth.guard';
 import { UserComponent } from './user/user.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component'
+
 
 
 const appRoutes: Routes = [
@@ -103,7 +105,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
-    BrowserModule
+    BrowserModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDvle76TmtgTUCv4xVJqkfPliRmfq_LqYQ'
+    })
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

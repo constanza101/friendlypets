@@ -1,0 +1,53 @@
+agm-map {
+      height: 100%;
+      width: 100%;
+    }
+
+    .bg-image {
+      background-size: cover;
+      background-position: center;
+      min-height: 200px; //esto lo agregue yo para q en movil
+    }
+
+
+    .placeImg {
+        border: 2px solid #C9D6E5;
+        //border-radius: 100%;
+        max-width: 100%;
+        margin-right: 10px;
+        margin-left: 0;
+        box-shadow: none
+    }
+
+    .myPlaces{
+    //  box-sizing: border-box;
+      overflow:scroll;
+    }
+
+    #contenedor{
+      margin-top: 70px;
+    }
+
+    #row100vh{
+      height: calc(100vh - 70px);
+    }
+
+    .mob-container{
+      max-height: 50%;
+      overflow-y: scroll;
+    }
+
+    .desk-container{
+      max-height: 100%;
+    }
+
+#allignSelfCenter{
+  overflow-y: scroll;
+}
+
+
+.imagen-{
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…QuODM3LDUzLjYwOXoiPjwvcGF0aD48L2c+PC9nPjwvZz48L3N2Zz48L2c+PC9nPjwvc3ZnPg==
+)
+
+}

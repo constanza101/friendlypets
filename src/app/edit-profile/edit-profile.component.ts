@@ -14,6 +14,11 @@ export class EditProfileComponent implements OnInit {
   newCityId:any;
   newPostalCode: any;
   userId: any;
+  newPetName: any;
+  newPetDescription: any;
+
+
+
 
   constructor() { }
   ngOnInit() {
@@ -39,7 +44,6 @@ export class EditProfileComponent implements OnInit {
 //data to update:
     var dataUser = [];
     var dataAddress = [];
-    var dataPet = [];
 
 
 //**********************************************************
@@ -102,7 +106,52 @@ export class EditProfileComponent implements OnInit {
 
   }//newData()
 
-}//END TS
+  //**********************************************************
+  //ADD ANIMAL:
+  //**********************************************************
+
+  newAnimal(){
+    //get owner id:
+        var isLogged = localStorage.getItem("userlogged");
+        var splitId = isLogged.split("/");
+        var user_id = splitId[0];
+         //this.userId = user_id;
+    //data from form:
+        //mascota:
+            var petName = $('#inputPetName').val();
+            var url = "http://localhost:8000/animal"
+            var animal_type_id = $('#inputType').val();
+            var birthDate = $('#inputBirthDate').val();
+            var gender = $('#inputGender').val();
+            var size = $('#inputSize').val();
+            var petDescription = $('#inputPetDescription').val();
+//TODO: input para subir fotos
+            var picture = "www.url.com";
+            var dataPet = {
+                            "owner_user_id": user_id,
+                            "name": petName,
+                            "animal_type_id": animal_type_id,
+                            "birthdate": birthDate,
+                            "gender": gender,
+                            "size": size,
+                            "picture": picture,
+                            "description": petDescription
+                          }
+
+console.log(dataPet)
+
+      if(petName != "" && petDescription != ""){
+                  $.post(url, dataPet, (response) => {
+                      console.log(response);
+                      alert("se ha guardado una nueva mascota");
+                    });//post animal
+      }
+    }// newAnimal()
+// animal_type_id, birthdate, gender, size, picture, description
+
+
+
+}//END CLASS
 
 //**********************************************************
 //DEFINED FUNCTIONS:
@@ -121,8 +170,6 @@ export class EditProfileComponent implements OnInit {
     contentType: "application/json"
     });
 }//end API call
-
-
 
 //define UPDATE ADDRESS DETAILS function:
 function updateAddress(user_id, dataAddress){
