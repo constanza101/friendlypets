@@ -21,19 +21,19 @@
       <div *ngIf="_auth.isLogged()" class="btn-group">
          <button (click)="_auth.goToMyProfile()" class="dropdown-item" type="button">
            <i class="fas fa-user"></i>
-           My Profile
+           Mi Perfil
          </button>
 
-         <button class="dropdown-item" type="button">
+         <button (click)="_auth.goToPlacesList()" class="dropdown-item" type="button">
             <i class="fas fa-heart"></i>
-           Places
+           Mis sitios favoritos
          </button>
-
+<!--
            <button class="dropdown-item" type="button">
              <i class="fas fa-users"></i>
-             Friends
+             Amigos
            </button>
-
+-->
 
          <button (click)="_auth.logOut()" class="dropdown-item" type="button">
            Log out

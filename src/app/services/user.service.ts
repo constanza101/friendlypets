@@ -19,7 +19,7 @@ export class UserService {
 
 
   getUserDetails(id){
-    var urlUser = "http://localhost:8000/user/"+id
+    var urlUser = "http://18.224.131.43:443/user/"+id
     $.get(urlUser, (response) => {
         this.userName = response[0].name;
         this.userAddressId = response[0].address_id;
@@ -33,16 +33,16 @@ export class UserService {
         this.userJoinedYear = myDate.getFullYear();
 
 
-        var urlAddress = "http://localhost:8000/address/"+this.userAddressId
+        var urlAddress = "http://18.224.131.43:443/address/"+this.userAddressId
         $.get(urlAddress, (response) => {
             var city_id = response[0].city_id
-            var urlCity = "http://localhost:8000/city/"+city_id
+            var urlCity = "http://18.224.131.43:443/city/"+city_id
             $.get(urlCity, (response) => {
               this.userCity = response[0].name;
             })//$.get(urlCity)
         })//$.get (urlAddress)
     });//$.get(urlUser)
-    var urlMyPets = "http://localhost:8000/animals/"+id
+    var urlMyPets = "http://18.224.131.43:443/animals/"+id
 
     $.get(urlMyPets, (response) => {
         console.log(response)

@@ -22,7 +22,7 @@ export class AuthService {
 
   login(email, password){
   var data = {"email":email,"password": password};
-  var url = "http://localhost:8000/userlogin"
+  var url = "http://18.224.131.43:443/userlogin"
   console.log(data)
 
     $.post(url, data, (response) => {
@@ -60,9 +60,18 @@ goToHome(){
 goToMyProfile(){
   this._myRoute.navigate(["myprofile"]); //<-- redirigir a otra página
 }
+
+goToPlacesList(){
+  this._myRoute.navigate(["places-list"]); //<-- redirigir a otra página
+}
+
+goToEditProfile(){
+  this._myRoute.navigate(["edit-profile"]); //<-- redirigir a otra página
+}
+
 registerUser(name, email, password){
   var data = {"name":name,"email":email,"password": password, "address_id": 1};
-  var url = "http://localhost:8000/user"
+  var url = "http://18.224.131.43:443/user"
   console.log("registrando usuario")
   console.log(name, email, password )
   $.post(url, data, (response) => {

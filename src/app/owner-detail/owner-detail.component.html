@@ -24,10 +24,11 @@
 
 
                   <div class="space space-4 my-2"></div>
-                  <a href="mailto:{{_user.userEmail}}" class="btn btn-sm btn-block btn-info">
-                    <i class="ace-icon fa fa-envelope-o bigger-110"></i>
-                    <span class="bigger-110"> Editar perfil </span>
-                  </a>
+
+                  <button (click)="_auth.goToEditProfile()" class="btn btn-sm btn-block btn-info" type="button" name="button">
+                      Editar perfil
+                  </button>
+
                 </div><!-- /.col -->
 
                 <div class="col-xs-12 col-sm-9">

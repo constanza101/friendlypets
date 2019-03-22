@@ -40,7 +40,7 @@ export class PlaceslistComponent implements OnInit {
   }
 
   getPlaces(){
-    var urlPlaces = "http://localhost:8000/places";
+    var urlPlaces = "http://18.224.131.43:443/places";
     $.get(urlPlaces, (response) => {
         this.markers = response;
       })
@@ -66,7 +66,7 @@ export class PlaceslistComponent implements OnInit {
   }
 
   addPlace(){
-    var url = "http://localhost:8000/place"
+    var url = "http://18.224.131.43:443/place"
     var latitude = this.newPlacelat;
     var longitude = this.newPlacelong;
     var inputName = $('#inputName').val();

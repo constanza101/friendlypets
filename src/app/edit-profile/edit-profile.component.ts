@@ -119,7 +119,7 @@ export class EditProfileComponent implements OnInit {
     //data from form:
         //mascota:
             var petName = $('#inputPetName').val();
-            var url = "http://localhost:8000/animal"
+            var url = "http://18.224.131.43:443/animal"
             var animal_type_id = $('#inputType').val();
             var birthDate = $('#inputBirthDate').val();
             var gender = $('#inputGender').val();
@@ -160,7 +160,7 @@ console.log(dataPet)
 
 //define UPDATE PERSONAL DETAILS function
  function updateUserDetails(user_id, dataUser){
-    var url = "http://localhost:8000/user/"+user_id
+    var url = "http://18.224.131.43:443/user/"+user_id
 
     return $.ajax({
     url: url,
@@ -173,7 +173,7 @@ console.log(dataPet)
 
 //define UPDATE ADDRESS DETAILS function:
 function updateAddress(user_id, dataAddress){
-   var url = "http://localhost:8000/user_address/"+user_id;
+   var url = "http://18.224.131.43:443/user_address/"+user_id;
   //console.log("user_id en updateAddress(): "+user_id)
   //console.log("dataAddress en updateAddress(): "+dataAddress)
 
